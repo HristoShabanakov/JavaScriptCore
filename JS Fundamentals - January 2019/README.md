@@ -1,0 +1,2 @@
+<a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/01.JavaScript%20Syntax%20and%20Operators%20-%20Lab">01.JavaScript Syntax and Operators - Lab</a><br>
+<a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/02.JavaScript%20Syntax%20and%20Operators%20-%20Exercises">02.JavaScript Syntax and Operators - Exercises</a>
