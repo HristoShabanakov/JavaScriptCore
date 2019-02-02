@@ -2,3 +2,4 @@
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/02.JavaScript%20Syntax%20and%20Operators%20-%20Exercises">02.JavaScript Syntax and Operators - Exercises</a><br>
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/03.Document%20Object%20Model%20-%20Lab">03.Document Object Model - Lab</a><br>
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/04.Document%20Object%20Model%20-%20Exercises">04.Document Object Model - Exercises</a><br>
+<a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/05.Functions%20and%20Logic%20Flow%20-%20Exercise"> 05.Functions and Logic Flow - Exercise </a><br>
