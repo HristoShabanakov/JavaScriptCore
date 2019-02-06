@@ -26,7 +26,7 @@ function solve() {
         }
 };
 
-    Array.from(buttons).forEach((btn) =>{
+    Array.from(buttons).forEach((btn) => {
         btn.addEventListener('click',clickEvent);
     });
 
@@ -41,13 +41,13 @@ function solve() {
             seat.style.backgroundColor = "rgb(255,0,0)";
             obj.__summary__.fans += 1;
             obj.__summary__.totalProfit += obj[zone][sector];
-            output.value += `  Seat ${seat.textContent} in zone ${zone} sector ${sector} was taken.\n`
+            output.value += ` Seat ${seat.textContent} in zone ${zone} sector ${sector} was taken.\n`
         }else{
-            output.value += `  Seat ${seat.textContent} in zone ${zone} sector ${sector} is unavailable.\n`
+            output.value += ` Seat ${seat.textContent} in zone ${zone} sector ${sector} is unavailable.\n`
         }
     }
 
     function getTheSummary(){
-        summary.children[1].textContent = `${obj.__summary__.totalProfit} leva, ${obj.__summary__.fans} fans. `;
+        summary.children[1].textContent = `${obj.__summary__.totalProfit} leva, ${obj.__summary__.fans} fans.`;
     }
 }
