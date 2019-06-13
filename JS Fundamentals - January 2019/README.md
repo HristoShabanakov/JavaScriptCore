@@ -5,3 +5,4 @@
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/05.Functions%20and%20Logic%20Flow%20-%20Exercise"> 05.Functions and Logic Flow - Exercise </a><br>
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/06.Arrays%20and%20Matrices%20-%20Lab"> 06.Arrays and Matrices - Lab</a><br>
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/07.Arrays%20and%20Matrices%20-%20Exercises"> 07.Arrays and Matrices  -Exercises</a><br>
+<a href ="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/JS%20Essentials%20Exam%20-%209%20June%202019">08. JS Essentials Exam - 9 June 2019 </a><br>
