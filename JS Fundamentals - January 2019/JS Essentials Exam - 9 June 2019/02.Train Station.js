@@ -1,30 +1,29 @@
 function train(wagonCapacity, passengers) {
 
-    let train = new Array(passengers.length).fill(0);
+    let train = [];
 
     let leftOvers = 0;
-    let nextWagon = 0;
+
 
     for (let i = 0; i < passengers.length; i++) {
 
-        nextWagon = passengers[i] + leftOvers;
+        leftOvers += passengers[i];
 
-        if (nextWagon < wagonCapacity) {
-            train[i] = passengers[i];
+        if (leftOvers <= wagonCapacity) {
+            train.push(leftOvers);
+            leftOvers = 0;
 
         } else {
-            leftOvers += passengers[i] - wagonCapacity;
+            leftOvers -= wagonCapacity;
 
-            train[i] = wagonCapacity;
+            train.push(wagonCapacity);
         }
     }
 
+    console.log(train);
     if (leftOvers === 0) {
-        console.log(train.join(', '));
-
         console.log("All passengers aboard");
     } else {
-        console.log(train.join(', '));
         console.log(`Could not fit ${leftOvers} passengers`);
     }
 }
