@@ -88,4 +88,16 @@ describe("mathEnforcerObject", function () {
         expect(expectedResult).to.be.closeTo(12.1, 0.01, "function return the sum of two negative numbers.")
     });
 
+    it("Sum with one number and string", () => {
+        let expectedResult = mathEnforcer.sum(1, "2");
+
+        expect(expectedResult).to.equal(undefined, "function return undefined with string as second parameter.")
+    });
+
+    it("Sum with one string and number", () => {
+        let expectedResult = mathEnforcer.sum("1", 2);
+
+        expect(expectedResult).to.equal(undefined, "function return undefined with string as first parameter.")
+    });
+
 });
