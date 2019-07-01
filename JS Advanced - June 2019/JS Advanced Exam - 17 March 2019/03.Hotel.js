@@ -1,7 +1,7 @@
 class Hotel {
     constructor(name, capacity) {
         this.name = name;
-        this.capacity = +capacity;
+        this.capacity = capacity;
         this.bookings = [];
         this.currentBookingNumber = 1;
 
@@ -46,7 +46,7 @@ class Hotel {
             for (let room in this.rooms) {
 
                 if (this.rooms[room] > 0) {
-                    info += `Available ${room} rooms: ${this.rooms[room]}`;
+                    info += ` Available ${room} rooms: ${this.rooms[room]}.`;
                 }
             }
             return info;
@@ -94,7 +94,7 @@ class Hotel {
 
     checkOut(currentBookingNumber) {
 
-        let client = this.bookings.find(b => b.roomNumber === b.currentBookingNumber);
+        let client = this.bookings.find(b => b.roomNumber === currentBookingNumber);
 
         if (!client) {
             return `The booking ${currentBookingNumber} is invalid.`;
@@ -108,6 +108,7 @@ class Hotel {
             let totalServiceMoney = 0;
 
             if (client.hasOwnProperty('services')) {
+
                 for (let i = 0; i < client.services.length; i++) {
                     totalServiceMoney += this.servicesPricing[client.services[i]];
                 }
@@ -117,29 +118,29 @@ class Hotel {
             let index = this.bookings.indexOf(client);
             this.bookings.splice(index, 1);
 
-            if (totalServiceMoney > 0) {
-                return `We hope you enjoyed your time here, Mr./Mrs. ${client.name}. The total amount of money you have to pay is 
+            if (totalServiceMoney > 0)
+                return `We hope you enjoyed your time here, Mr./Mrs. ${client.name}. The total amount of money you have to pay is
                 ${totalMoney + totalServiceMoney} BGN. You have used additional room services, costing ${totalServiceMoney} BGN.`;
 
-                return `We hope you enjoyed your time here, Mr./Mrs. ${client.name}. The total amount of money you have to pay is ${totalMoney} BGN.`;
-            }
+            return `We hope you enjoyed your time here, Mr./Mrs. ${client.name}. The total amount of money you have to pay is ${totalMoney} BGN.`;
         }
-
     }
 
     report() {
 
         let report = [];
-        report.push(`${this.name.toUpperCase()} DATABASE`);
+        report.push(`${this.name.toUpperCase()} DATABASE:`);
         report.push('--------------------');
 
         if (this.bookings.length === 0) {
-            report.push(`There are currently no bookings.`);
+            report.push('There are currently no bookings.');
             return report.join('\n');
         }
 
         for (let i = 0; i < this.bookings.length; i++) {
+
             let client = this.bookings[i];
+
             report.push(`bookingNumber - ${client.roomNumber}`);
             report.push(`clientName - ${client.name}`);
             report.push(`roomType - ${client.roomType}`);
@@ -148,7 +149,8 @@ class Hotel {
             if (client.hasOwnProperty('services') && client.services.length) {
                 report.push(`services: ${client.services.join(', ')}`);
             }
-            report.push(`----------`)
+
+            report.push(`----------`);
         }
         report.pop();
         return report.join('\n');
@@ -165,3 +167,5 @@ console.log(brucy.roomService(3, 'housekeeping'));
 console.log(brucy.roomService(3, 'drink'));
 console.log(brucy.roomService(2, 'room'));
 console.log(brucy.roomService(1, 'food'));
+
+console.log(brucy.report());
