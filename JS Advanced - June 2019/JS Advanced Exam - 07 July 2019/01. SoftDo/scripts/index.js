@@ -14,15 +14,9 @@ function mySolution() {
 
     sendButton.addEventListener('click', createQuestion);
 
-
-
     function createQuestion() {
 
-
-
-
-
-        let createDiv = document.createElement('div') //setAttribute("class", "pendingQuestion");
+        let createDiv = document.createElement('div')
         let attribute = document.createAttribute('class');
         attribute.value = 'pendingQuestion';
         createDiv.setAttributeNode(attribute);
@@ -59,9 +53,16 @@ function mySolution() {
         createDivAction.appendChild(createOpenButton);
 
         createDiv.appendChild(createDivAction);
-
-
         pendingQuestions.appendChild(createDiv);
+
+        createArchiveButton.addEventListener('click', function (e) {
+            createDiv.remove();
+        });
+
+        createOpenButton.addEventListener('click', () => {
+            let openQuestionsDiv = document.getElementById('openQuestions');
+            openQuestionsDiv.appendChild(pendingQuestions);
+        })
 
 
     }
