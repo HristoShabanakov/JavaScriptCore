@@ -1,3 +1,5 @@
+JavaScript Fundamentals course will focus on  learning the basic JavaScript syntax. Working with data types, operators, expressions, conditional statements, loops, and function handling are studied. Becoming  familiar with the DOM tree and start working with JavaScript in the browser. The course is highly practice oriented, with a huge number of class exercises and a practical exam.
+
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/01.JavaScript%20Syntax%20and%20Operators%20-%20Lab">01.JavaScript Syntax and Operators - Lab</a><br>
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/02.JavaScript%20Syntax%20and%20Operators%20-%20Exercises">02.JavaScript Syntax and Operators - Exercises</a><br>
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Fundamentals%20-%20January%202019/03.Document%20Object%20Model%20-%20Lab">03.Document Object Model - Lab</a><br>
