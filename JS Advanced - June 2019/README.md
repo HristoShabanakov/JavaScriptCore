@@ -4,3 +4,4 @@ In the JavaScript Advanced course you will upgrade your JavaScript knowledge by 
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Advanced%20-%20June%202019/02.Advanced%20Functions%20-%20Exercise"> 02.Advanced Functions - Exercise</a><br>
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Advanced%20-%20June%202019/04.DOM%20Manipulations%20-%20Exercise">04.DOM Manipulations</a><br>
 <a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Advanced%20-%20June%202019/06.Unit%20Testing%20and%20Modules%20-%20Exercise">06.Unit Testing and modules - Exercise</a><br>
+<a href="https://github.com/HristoShabanakov/JavaScriptCore/tree/master/JS%20Advanced%20-%20June%202019/07.Classes%20-%20Lab">07.Classes - Lab</a><br>
