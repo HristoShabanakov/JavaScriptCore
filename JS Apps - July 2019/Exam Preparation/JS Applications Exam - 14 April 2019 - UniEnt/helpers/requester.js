@@ -7,7 +7,7 @@ const requester = function () {
 
     const post = function (url, headers) {
         headers.method = "POST";
-        return makeRequest(baseUrl + url, headers);
+        return makeRequest(url, headers);
     };
 
     const put = function (url, headers) {
@@ -29,7 +29,7 @@ const requester = function () {
             headers.headers["Authorization"] = `Kinvey ${token}`;
         }
 
-        return fetch(url, headers);
+        return fetch(baseUrl + url, headers);
     };
 
     return {
