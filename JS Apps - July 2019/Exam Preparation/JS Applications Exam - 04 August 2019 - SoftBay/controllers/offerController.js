@@ -19,12 +19,14 @@ const offerController = function () {
             ...context.params
         };
 
-        requester
-            .post(url, authorizationType, data)
-            .then(helper.handler)
-            .then(() => {
-                context.redirect('#/dashboard');
-            });
+        if (data.product && data.description && data.price && data.pictureUrl) {
+            requester
+                .post(url, authorizationType, data)
+                .then(helper.handler)
+                .then(() => {
+                    context.redirect('#/dashboard');
+                });
+        }
     };
 
     const getDashboard = function (context) {
@@ -84,16 +86,20 @@ const offerController = function () {
         const url = `/appdata/${storage.appKey}/offers/${id}`;
         delete context.params.offerId;
         const authorizationType = 'Kinvey';
+
         const data = {
             ...context.params
         };
 
-        requester
-            .put(url, authorizationType, data)
-            .then(helper.handler)
-            .then(() => {
-                context.redirect('#/dashboard');
-            });
+        if (data.product && data.description && data.price && data.pictureUrl) {
+            requester
+                .put(url, authorizationType, data)
+                .then(helper.handler)
+                .then(() => {
+                    context.redirect('#/dashboard');
+                });
+        }
+
     };
 
     const getDeleteOffer = async function (context) {
