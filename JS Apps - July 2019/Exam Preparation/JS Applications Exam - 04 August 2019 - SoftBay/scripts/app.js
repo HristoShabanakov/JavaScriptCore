@@ -32,6 +32,9 @@ const app = Sammy('#cont', function () {
     //Details
     this.get('#/details/:offerId', offerController.getOfferDetails);
 
+    //Profile Page
+    this.get('#/profile', offerController.getProfilePage);
+
 });
 
 (() => {

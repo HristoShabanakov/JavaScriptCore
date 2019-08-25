@@ -10,5 +10,8 @@
         "jquery": "^3.4.1",
         "popper.js": "^1.15.0",
         "sammy": "^0.7.6"
+    },
+    "devDependencies": {
+        "surge": "^0.21.3"
     }
 }

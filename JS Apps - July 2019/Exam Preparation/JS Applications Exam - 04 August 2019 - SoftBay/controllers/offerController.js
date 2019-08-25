@@ -29,17 +29,6 @@ const offerController = function () {
         }
     };
 
-    const getDashboard = function (context) {
-        helper.addHeaderInfo(context);
-        context.loadPartials({
-            header: './views/common/header.hbs',
-            footer: './views/common/footer.hbs',
-
-        }).then(function () {
-            this.partial('./views/offers/dashboard.hbs')
-        });
-    };
-
     const getAllOffers = async function (context) {
         helper.addHeaderInfo(context);
 
@@ -49,13 +38,19 @@ const offerController = function () {
         await requester.get(url, authorizationType)
             .then(response => response.json())
             .then(offers => {
+                for (const offer of offers) {
+                    const isCreator =
+                        offer._acl.creator === JSON.parse(storage.getData('userInfo'))._id;
+
+                    offer.isCreator = isCreator;
+                }
+
                 context.offers = offers;
             });
 
         context.loadPartials({
             header: './views/common/header.hbs',
             footer: './views/common/footer.hbs',
-            eachOffer: './views/offers/eachOffer.hbs'
 
         }).then(function () {
             this.partial('./views/offers/dashboard.hbs')
@@ -99,7 +94,6 @@ const offerController = function () {
                     context.redirect('#/dashboard');
                 });
         }
-
     };
 
     const getDeleteOffer = async function (context) {
@@ -157,16 +151,28 @@ const offerController = function () {
         });
     };
 
+    const getProfilePage = function (context) {
+        helper.addHeaderInfo(context);
+        context.loadPartials({
+            header: './views/common/header.hbs',
+            footer: './views/common/footer.hbs',
+
+        }).then(function () {
+            this.partial('./views/offers/profilePage.hbs')
+        });
+
+    };
+
     return {
         getCreateOffer,
         postCreateOffer,
-        getDashboard,
         getAllOffers,
         getEditOffer,
         postEditOffer,
         getDeleteOffer,
         postDeleteOffer,
-        getOfferDetails
+        getOfferDetails,
+        getProfilePage
 
     }
 }();
