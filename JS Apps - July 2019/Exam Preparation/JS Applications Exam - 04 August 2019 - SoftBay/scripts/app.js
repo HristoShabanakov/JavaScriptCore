@@ -35,6 +35,8 @@ const app = Sammy('#cont', function () {
     //Profile Page
     this.get('#/profile', offerController.getProfilePage);
 
+
+
 });
 
 (() => {

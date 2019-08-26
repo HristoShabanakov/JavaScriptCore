@@ -23,6 +23,7 @@ const userController = function () {
             .then(helper.handler)
             .then(data => {
                 storage.saveUser(data);
+                helper.notify('success', 'Registration successful');
                 context.redirect('#/home');
             });
     };
@@ -47,7 +48,9 @@ const userController = function () {
         requester
             .post(url, authorizationType, data)
             .then(helper.handler)
+
             .then(data => {
+                helper.notify('success', 'Login successful');
                 storage.saveUser(data);
                 context.redirect('#/home');
             });
@@ -62,6 +65,7 @@ const userController = function () {
             .then(helper.handler)
             .then(() => {
                 storage.deleteUser();
+                helper.notify('success', 'Logout successful');
                 context.redirect('#/home');
             });
     };

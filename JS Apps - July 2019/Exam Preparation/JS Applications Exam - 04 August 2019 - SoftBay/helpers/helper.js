@@ -20,8 +20,41 @@ const helper = function () {
         }
     };
 
+    const notify = function (type, textContent) {
+        let element = '';
+
+        switch (type) {
+            case 'success':
+                element = document.getElementById('successNotification');
+                element.textContent = textContent;
+                element.addEventListener('click', (event) => event.currentTarget.style.display = 'none');
+                break;
+            case 'error':
+                element = document.getElementById('errorNotification');
+                element.textContent = textContent;
+                element.addEventListener('click', (event) => event.currentTarget.style.display = 'none');
+                break;
+            case 'loading':
+                element = document.getElementById('loadingNotification');
+                element.textContent = 'Loading...';
+                break;
+        }
+
+        element.style.display = 'block';
+
+    };
+
+    const stopNotify = function () {
+        Array.from(document.getElementById('notifications').children)
+            .forEach((child) => {
+                child.style.display = 'none';
+            });
+    }
+
     return {
         handler,
-        addHeaderInfo
+        addHeaderInfo,
+        notify,
+        stopNotify
     };
 }();

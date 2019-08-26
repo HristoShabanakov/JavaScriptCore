@@ -24,6 +24,7 @@ const offerController = function () {
                 .post(url, authorizationType, data)
                 .then(helper.handler)
                 .then(() => {
+                    helper.notify('success', 'Offer was created successfully!');
                     context.redirect('#/dashboard');
                 });
         }
@@ -68,6 +69,7 @@ const offerController = function () {
             .then(response => response.json())
             .then(offer => context.offer = offer);
 
+
         context.loadPartials({
             header: './views/common/header.hbs',
             footer: './views/common/footer.hbs',
@@ -91,6 +93,7 @@ const offerController = function () {
                 .put(url, authorizationType, data)
                 .then(helper.handler)
                 .then(() => {
+                    helper.notify('success', 'Offer successfully edited');
                     context.redirect('#/dashboard');
                 });
         }
@@ -124,6 +127,7 @@ const offerController = function () {
             .del(url, authorizationType)
             .then(helper.handler)
             .then(() => {
+                helper.notify('success', 'Offer successfully deleted');
                 context.redirect('#/dashboard');
             });
     };
