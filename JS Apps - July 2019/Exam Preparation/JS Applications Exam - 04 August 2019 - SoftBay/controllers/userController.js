@@ -39,17 +39,21 @@ const userController = function () {
     };
 
     const postLogin = function (context) {
+
         const url = `/user/${storage.appKey}/login`;
         const authorizationType = 'Basic';
+        helper.notify('loading')
         const data = {
             ...context.params
         };
 
         requester
+
             .post(url, authorizationType, data)
             .then(helper.handler)
 
             .then(data => {
+                helper.stopNotify();
                 helper.notify('success', 'Login successful');
                 storage.saveUser(data);
                 context.redirect('#/home');

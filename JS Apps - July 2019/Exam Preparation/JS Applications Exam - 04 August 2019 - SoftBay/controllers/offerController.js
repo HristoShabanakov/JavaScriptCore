@@ -15,6 +15,8 @@ const offerController = function () {
         const url = `/appdata/${storage.appKey}/offers`;
         const authorizationType = 'Kinvey';
 
+        helper.notify('loading')
+
         const data = {
             ...context.params
         };
@@ -24,6 +26,7 @@ const offerController = function () {
                 .post(url, authorizationType, data)
                 .then(helper.handler)
                 .then(() => {
+                    helper.stopNotify();
                     helper.notify('success', 'Offer was created successfully!');
                     context.redirect('#/dashboard');
                 });
@@ -84,6 +87,8 @@ const offerController = function () {
         delete context.params.offerId;
         const authorizationType = 'Kinvey';
 
+        helper.notify('loading')
+
         const data = {
             ...context.params
         };
@@ -93,6 +98,7 @@ const offerController = function () {
                 .put(url, authorizationType, data)
                 .then(helper.handler)
                 .then(() => {
+                    helper.stopNotify();
                     helper.notify('success', 'Offer successfully edited');
                     context.redirect('#/dashboard');
                 });
@@ -123,10 +129,13 @@ const offerController = function () {
         const url = `/appdata/${storage.appKey}/offers/${id}`;
         const authorizationType = 'Kinvey';
 
+        helper.notify('loading')
         requester
+
             .del(url, authorizationType)
             .then(helper.handler)
             .then(() => {
+                helper.stopNotify();
                 helper.notify('success', 'Offer successfully deleted');
                 context.redirect('#/dashboard');
             });

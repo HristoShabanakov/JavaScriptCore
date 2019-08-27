@@ -1,6 +1,8 @@
 const helper = function () {
     const handler = function (response) {
         if (response.status >= 400) {
+            stopNotify();
+            notify('error', response.statusText);
             throw new Error(`Something went wrong. Error: ${response.statusText}`);
         }
 
@@ -19,6 +21,10 @@ const helper = function () {
             context.username = JSON.parse(storage.getData('userInfo')).username;
         }
     };
+
+    const passwordCheck = function (params) {
+        return params.password === params.password;
+    }
 
     const notify = function (type, textContent) {
         let element = '';
@@ -55,6 +61,7 @@ const helper = function () {
         handler,
         addHeaderInfo,
         notify,
-        stopNotify
+        stopNotify,
+        passwordCheck
     };
 }();
