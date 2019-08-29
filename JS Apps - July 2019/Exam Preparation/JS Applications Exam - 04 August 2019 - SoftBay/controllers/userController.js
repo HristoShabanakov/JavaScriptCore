@@ -13,15 +13,18 @@ const userController = function () {
         const url = `/user/${storage.appKey}`;
         const authorizationType = 'Basic';
 
+        helper.notify('loading')
+
         const data = {
             username: context.params.username,
-            password: context.params.password
+            password: context.params.password,
         };
 
         requester
             .post(url, authorizationType, data)
             .then(helper.handler)
             .then(data => {
+                helper.stopNotify();
                 storage.saveUser(data);
                 helper.notify('success', 'Registration successful');
                 context.redirect('#/home');
@@ -42,7 +45,9 @@ const userController = function () {
 
         const url = `/user/${storage.appKey}/login`;
         const authorizationType = 'Basic';
+
         helper.notify('loading')
+
         const data = {
             ...context.params
         };

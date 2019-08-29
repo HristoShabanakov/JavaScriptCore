@@ -176,6 +176,17 @@ const offerController = function () {
 
     };
 
+    const getAboutPage = function (context) {
+        helper.addHeaderInfo(context);
+        context.loadPartials({
+            header: './views/common/header.hbs',
+            footer: './views/common/footer.hbs',
+
+        }).then(function () {
+            this.partial('./views/home/aboutPage.hbs')
+        });
+    }
+
     return {
         getCreateOffer,
         postCreateOffer,
@@ -185,7 +196,7 @@ const offerController = function () {
         getDeleteOffer,
         postDeleteOffer,
         getOfferDetails,
-        getProfilePage
-
+        getProfilePage,
+        getAboutPage
     }
 }();

@@ -48,6 +48,7 @@ const helper = function () {
 
         element.style.display = 'block';
 
+
     };
 
     const stopNotify = function () {
