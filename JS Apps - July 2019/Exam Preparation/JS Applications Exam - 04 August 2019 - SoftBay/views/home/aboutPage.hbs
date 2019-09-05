@@ -1,0 +1,123 @@
+{{>header}}
+<div>
+    <h1>
+        JavaScript Application - Softbay
+    </h1>
+    <div class="col-md-6 img">
+        <img style="text-align: center; max-width: 450px;" src="./images/userIcon.png" alt="" class="img-rounded">
+    </div>
+    <p>
+        My Name is Hristo Shabanakov, currently I am studying for C# Web Developer at Software University.<br>
+        For the final exam of JavaScript Core course - I had to develope a Single Page Application (SPA) using
+        JavaScript.<br>
+        The aim was to create a Web Application which keep users and offers. Guests should be able to register and
+        login.<br>
+        Logged-in users should be able to view all offers (dashboard), create and view offers and logout.<br>
+        Logged-in users should also be able to edit or delete the offers they have created.
+        <br>
+        Used technologies:JavaScript, AJAX, REST, JSON, Kinvey(cloud-based backend).
+        Used libraries: Handlebars, Sammy and jQuery.<br>
+        <br>Client-Side Web Application functionality:
+        <br>
+        <b>Navigation Bar</b>
+
+        - The <b>logged-in user</b> navigation bar should contain the following elements: <b>[SoftBay], [Dashboard],
+            [Create
+            Offer], [Profile] and [Logout]</b>
+        .<br>
+        - The <b>guest</b> users navigation bar should contain the following elements: <b>[SoftBay], [About] and
+            [Login]</b>.<br>
+        <b>Register Page:</b><br>
+
+        - By given <b>username</b> and <b>password</b>, the application should <b>register</b> a <b>new user</b> in the
+        system.<br>
+
+        - After a successful <b>registration</b>, <b>Home page</b> should be displayed with the right navbar.<br>
+
+        <b>Login Page:</b><br>
+
+        - By given <b>username</b> and <b>password</b>, the application should login an existing user.<br>
+        - After a <b>successful login</b>, <b>Home page</b> should be displayed with correct Navigation bar view.<br>
+
+        <b>Logout</b><br>
+
+        - Successfullly <b>logged</b> in users should be able to <b>logout</b> from the app.<br>
+        - After a successful <b>logout</b> the <b>Home page</b> for guest users should be shown.<br>
+        - A green notification message should be shown <b>'Logout successful'</b>.<br>
+
+        <b>Home Page</b><br>
+
+        - If the user is <b>logged-in</b> <b>Home page</b> should display the full menu <b>[Softbay], [Dashboard],
+            [Create Offer], [Profile], [Logout]</b>.<br>
+
+        <b>Create Offer</b><br>
+
+        - <b>Logged-in users</b> should be able to <b>Create Offers</b>.<br>
+        - By clicking <b>Create Offer link</b> in the Navigation Bar, <b>Create Offer page</b> should be shown.<br>
+        - After a successful offer creation the <b>Dashboard page</b> should be shown.<br>
+        - Notification message <b>'Offer was created successfully!'</b> will be displayed.<br>
+        - The <b>newly</b> created offer should be stored in <b>Kinvey database</b>.<br>
+
+        <b>Dashboard</b><br>
+
+        - By clicking <b>Dashboard link</b>, the currently <b>logged-in user</b> should be able to see all created
+        offers.<br>
+        - If there are no such offers <b>'There is offers, we are very sorry...'</b> view should be displayed.<br>
+
+        <b>Edit offer</b><br>
+
+        - <b>Logged-in users</b> should be able to edit their own offers.
+        - By clicking <b>[Edit] button</b> of a particular offer, <b>Edit Offer Page</b> should be displayed with
+        already filled
+        input fields with the current offer information.<br>
+        - By cliking the <b>[Edit] button</b>, a put request should be send to Kinvey database and the current offer
+        should be changed.<br>
+        - Notification message <b>'Offer was edited successfully!'</b> will be displayed.
+
+        <b>Delete Offer</b><br>
+
+        - Logged-in users should be able to delete their own offers.<br>
+        - Clicking the [Delete] button of an particular offer the 'Offer Delete page' should be displayed with already
+        filled information about that offer,
+        with all input fields are disabled.<br>
+        - If the <b>[Delete] button</b> in the <b>Offer Delete Page is clicked</b>, the <b>current offer must be
+            deleted</b> from the DOM and
+        from the Kinvey database.<br>
+        - After successful offer delete a <b>Dashboard page</b> must be shown. <br>
+
+        <b>Offer Details</b><br>
+
+        - <b>Logged-in users</b> should be able to view details about offers.<br>
+        - Clicking the <b>[Order details] button</b> in of a particular offer should display the <b>'Offer Details
+            page'</b>.<br>
+        - The product name, picture, description and price will be displayed on the page.<br>
+
+        <b>Profile Page</b><br>
+
+        - <b>Profile page</b> should display the <b>username</b> of the <b>current user</b> and <b>number</b> of
+        purchases he
+        made.<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </p>
+</div>
+{{>footer}}

@@ -18,6 +18,7 @@ const userController = function () {
         const data = {
             username: context.params.username,
             password: context.params.password,
+            numberOfPurchases: 0
         };
 
         requester

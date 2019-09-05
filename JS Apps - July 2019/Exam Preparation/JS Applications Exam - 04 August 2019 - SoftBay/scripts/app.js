@@ -38,6 +38,9 @@ const app = Sammy('#cont', function () {
     //About Page
     this.get('#/about', offerController.getAboutPage);
 
+    //Buy
+    this.get('#/buy', offerController.postBuyOffer);
+
 
 
 });

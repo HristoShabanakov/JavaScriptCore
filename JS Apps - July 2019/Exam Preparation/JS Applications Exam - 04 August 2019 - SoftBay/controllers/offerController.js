@@ -72,7 +72,6 @@ const offerController = function () {
             .then(response => response.json())
             .then(offer => context.offer = offer);
 
-
         context.loadPartials({
             header: './views/common/header.hbs',
             footer: './views/common/footer.hbs',
@@ -165,6 +164,7 @@ const offerController = function () {
     };
 
     const getProfilePage = function (context) {
+        context.numberOfPurchases = JSON.parse(storage.getData('userInfo')).numberOfPurchases;
         helper.addHeaderInfo(context);
         context.loadPartials({
             header: './views/common/header.hbs',
@@ -185,7 +185,27 @@ const offerController = function () {
         }).then(function () {
             this.partial('./views/home/aboutPage.hbs')
         });
-    }
+    };
+
+    const postBuyOffer = function (context) {
+        const url = `/user/${storage.appKey}/${JSON.parse(storage.getData('userInfo'))._id}`;
+        const authorizationType = 'Kinvey';
+
+        const data = {
+            username: JSON.parse(storage.getData('userInfo')).username,
+            password: JSON.parse(storage.getData('userInfo')).password,
+            numberOfPurchases: JSON.parse(storage.getData('userInfo')).numberOfPurchases + 1
+        };
+
+        requester
+            .put(url, authorizationType, data)
+            .then(helper.handler)
+            .then(data => {
+                storage.deleteUser();
+                storage.saveUser(data);
+                context.redirect('#/dashboard');
+            });
+    };
 
     return {
         getCreateOffer,
@@ -197,6 +217,7 @@ const offerController = function () {
         postDeleteOffer,
         getOfferDetails,
         getProfilePage,
-        getAboutPage
+        getAboutPage,
+        postBuyOffer
     }
 }();
